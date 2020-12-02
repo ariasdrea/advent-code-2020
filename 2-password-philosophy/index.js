@@ -21,7 +21,7 @@ lines.map((line) => {
     const occurrences = password.split(letterToCheck).length - 1;
 
     if (occurrences >= min && occurrences <= max) {
-        counter += 1;
+        counter++;
     }
 });
 
