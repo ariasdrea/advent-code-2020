@@ -1,3 +1,6 @@
+// Find the two entries that sum to 2020 and then multiply those two numbers together.
+// Provide what that number is.
+
 const fs = require("fs");
 
 const file = fs.readFileSync(__dirname + "/entries.txt", "utf8");
