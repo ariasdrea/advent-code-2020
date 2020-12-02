@@ -12,8 +12,10 @@ const refinedArr = arr.map((num) => parseInt(num));
 function findSum(num) {
     for (var i = 0; i < refinedArr.length; i++) {
         for (var j = 0; j < refinedArr.length; j++) {
-            if (refinedArr[i] + refinedArr[j] === num) {
-                return refinedArr[i] * refinedArr[j];
+            for (var k = 0; k < refinedArr.length; k++) {
+                if (refinedArr[i] + refinedArr[j] + refinedArr[k] === num) {
+                    return refinedArr[i] * refinedArr[j] * refinedArr[k];
+                }
             }
         }
     }
