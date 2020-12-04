@@ -3,9 +3,7 @@
 
 const fs = require("fs");
 
-const map = fs.readFileSync(__dirname + "/map.txt", "utf8");
-
-const path = map.split("\n");
+const path = fs.readFileSync(__dirname + "/map.txt", "utf8").split("\n");
 
 function repeatStrings(arrOfStrings, times) {
     if (times > 0) {
@@ -20,18 +18,18 @@ let y = 0;
 let right = 3;
 let down = 1;
 
-(function countingTrees() {
+function countingTrees() {
     const revisedPath = repeatStrings(path, 32);
     for (var i = 0; i < revisedPath.length; i++) {
         let currentPosition = revisedPath[y][x];
 
-        if (currentPosition === "#") {
-            treeCounter++;
-        }
+        if (currentPosition === "#") treeCounter++;
 
         x += right;
         y += down;
     }
 
-    console.log(treeCounter);
-})();
+    return treeCounter;
+}
+
+console.log(countingTrees());
