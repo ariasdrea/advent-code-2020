@@ -1,13 +1,11 @@
-// Find the two entries that sum to 2020 and then multiply those two numbers together.
-// Provide what that number is.
+// In your expense report, what is the product of the three entries that sum to 2020?
 
 const fs = require("fs");
 
-const file = fs.readFileSync(__dirname + "/entries.txt", "utf8");
-
-const arr = file.split("\n");
-
-const refinedArr = arr.map((num) => parseInt(num));
+const refinedArr = fs
+    .readFileSync(__dirname + "/entries.txt", "utf8")
+    .split("\n")
+    .map((num) => parseInt(num));
 
 function findSum(num) {
     for (var i = 0; i < refinedArr.length; i++) {
