@@ -4,9 +4,7 @@
 
 const fs = require("fs");
 
-const file = fs.readFileSync(__dirname + "/passwords.txt", "utf8");
-
-const lines = file.split("\n");
+const lines = fs.readFileSync(__dirname + "/passwords.txt", "utf8").split("\n");
 
 let counter = 0;
 
