@@ -4,9 +4,7 @@
 
 const fs = require("fs");
 
-const file = fs.readFileSync(__dirname + "/passwords.txt", "utf8");
-
-const lines = file.split("\n");
+const lines = fs.readFileSync(__dirname + "/passwords.txt", "utf8").split("\n");
 
 let counter = 0;
 
@@ -20,9 +18,7 @@ lines.map((line) => {
 
     const occurrences = password.split(letterToCheck).length - 1;
 
-    if (occurrences >= min && occurrences <= max) {
-        counter++;
-    }
+    if (occurrences >= min && occurrences <= max) counter++;
 });
 
 console.log(counter);
