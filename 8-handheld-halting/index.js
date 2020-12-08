@@ -8,10 +8,11 @@ function cleanData(data) {
     let acc = 0;
     let i = 0;
     let executedMoves = [];
+    let move, entireNum;
 
     while (true) {
-        let move = data[i].slice(0, 3);
-        let entireNum = parseInt(data[i].substring(4));
+        move = data[i].slice(0, 3);
+        entireNum = parseInt(data[i].substring(4));
         executedMoves.push(i);
 
         if (move == "acc") {
